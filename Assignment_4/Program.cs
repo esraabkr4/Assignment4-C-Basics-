@@ -149,14 +149,15 @@ namespace Assignment_4
             //Console.WriteLine(Program.ReverseWords(Console.ReadLine()));
             #endregion
 
-            #region Q27
+            #region Q27 *Updated*
             ////27 - Write a program to create two multidimensional arrays of same size.
             ////    Accept value from user and store them in first array. Now copy all 
             ////    the elements of first array on second array and print second array.
 
-            //int[,] FirstArr = GetArrayFromUser();
-            //int[,] SecondArr = FirstArr;
-            //PrintArray(SecondArr);
+            int[,] FirstArr = GetArrayFromUser();
+            int[,] SecondArr =new int[FirstArr.GetLength(0),FirstArr.GetLength(1)];
+            Array.Copy(FirstArr, SecondArr, FirstArr.Length);
+            PrintArray(SecondArr);
             #endregion
 
             #region Q28
@@ -168,20 +169,32 @@ namespace Assignment_4
 
             /*Functions*/
 
-            #region Q1 Functions
+            #region Q1 Functions *Updated*
             ////1- Explain the difference between passing(Value type parameters) by value 
             ////    and by reference then write a suitable c# example.
 
             //Passing Value By Value =>send variable value to method and any change on it during
             //method not affect the real variable
-            //ex: Swap(int x,int y);
+            //example: 
+            //int x = 3, y = 7;
+            //Console.WriteLine($"Before Swap X= {x}");
+            //Console.WriteLine($"Before Swap Y= {y}");
+            //Program.swap<int>(x,y);
+            //Console.WriteLine($"After Swap X= {x}");
+            //Console.WriteLine($"After Swap Y= {y}");
 
             //Passing Value By Reference =>send variable Address to method and any change on it during
             //method will affect the real variable
-            //ex: Swap(ref int x,ref int y);
+            //example:
+            //int x = 3, y = 7;
+            //Console.WriteLine($"Before Swap X= {x}");
+            //Console.WriteLine($"Before Swap Y= {y}");
+            //Program.swap<int>(ref x,ref y);
+            //Console.WriteLine($"After Swap X= {x}");
+            //Console.WriteLine($"After Swap Y= {y}");
             #endregion
 
-            #region Q2 Functions
+            #region Q2 Functions *Updated*
             ////2- Explain the difference between passing(Reference type parameters) by value 
             ////    and by reference then write a suitable c# example.
 
@@ -189,11 +202,33 @@ namespace Assignment_4
             //take acopy of array address in heap so if i change the array address (reference)
             //the real array will be affected
             //but if i changes the array data the real array not affected
-            //ex: Swap(int[] x,in[] y);
+            //example
+            //int[] x = {1,2}, y = {5,7};
+            //Console.WriteLine("Before Swap X= ");
+            //foreach(var item in x) Console.WriteLine(item);
+            //Console.WriteLine("Before Swap Y= ");
+            //foreach (var item in y) Console.WriteLine(item);
+
+            //Program.swap<int[]>(x, y);
+            //Console.WriteLine("After Swap X= ");
+            //foreach (var item in x) Console.WriteLine(item);
+            //Console.WriteLine("After Swap Y= ");
+            //foreach (var item in y) Console.WriteLine(item);
 
             //Passing Reference By Reference =>send Array real address in the stack
             //so if i change the array reference or data the real array will be affected
-            //ex: Swap(ref int[] x,ref in[] y);
+            //example
+            //int[] x = { 1, 2 }, y = { 5, 7 };
+            //Console.WriteLine("Before Swap X= ");
+            //foreach (var item in x) Console.WriteLine(item);
+            //Console.WriteLine("Before Swap Y= ");
+            //foreach (var item in y) Console.WriteLine(item);
+
+            //Program.swap<int[]>(ref x,ref y);
+            //Console.WriteLine("After Swap X= ");
+            //foreach (var item in x) Console.WriteLine(item);
+            //Console.WriteLine("After Swap Y= ");
+            //foreach (var item in y) Console.WriteLine(item);
             #endregion
 
             #region Q3 Functions
@@ -511,6 +546,21 @@ namespace Assignment_4
         }
 
         ////////////////********Functions************////////////
+
+        //Q1,Q2 function 
+        static void swap<T>(T x, T y)
+        {
+            T temp = x; 
+            x = y; 
+            y = temp;
+        }
+        static void swap<T>(ref T x,ref T y)
+        {
+            T temp = x;
+            x = y;
+            y = temp;
+        }
+
         //Q3 function 
         static void GetSumSub(int[] ParamArr)
         {

@@ -12,3 +12,4 @@ E:\Root course\c#\Basics\C#4(Basic)\Assignment_4\obj\Debug\net8.0\refint\Assignm
 E:\Root course\c#\Basics\C#4(Basic)\Assignment_4\obj\Debug\net8.0\Assignment_4.pdb
 E:\Root course\c#\Basics\C#4(Basic)\Assignment_4\obj\Debug\net8.0\Assignment_4.genruntimeconfig.cache
 E:\Root course\c#\Basics\C#4(Basic)\Assignment_4\obj\Debug\net8.0\ref\Assignment_4.dll
+E:\Root course\c#\Basics\C#4(Basic)\Assignment_4\obj\Debug\net8.0\Assignment_4.sourcelink.json
